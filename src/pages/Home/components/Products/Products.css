@@ -5,6 +5,7 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .view_more_btn {
@@ -47,5 +48,17 @@
   }
   &:active {
     transform: scale(95%) translateX(-50%);
+  }
+}
+
+@media (max-width: 1220px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 790px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
