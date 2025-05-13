@@ -9,6 +9,7 @@ import {
 // components
 import { Home } from "./pages/Home/Home";
 import { Cart } from "./pages/Cart/Cart";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

@@ -12,6 +12,8 @@ import axios from "axios";
 
 // hooks
 import { useState, useEffect } from "react";
+
+// constants
 import { API_ENDPOINTS, API_URL } from "../../constants/api";
 
 const cartController = new CartController();

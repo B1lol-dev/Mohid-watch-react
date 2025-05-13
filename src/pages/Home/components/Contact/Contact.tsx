@@ -8,7 +8,7 @@ import "./Contact.css";
 import { useState } from "react";
 
 // components
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 export const Contact = () => {
   const [email, setEmail] = useState("");
