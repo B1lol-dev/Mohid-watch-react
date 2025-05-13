@@ -1,0 +1,14 @@
+footer {
+  background-color: var(--bg-pr);
+  margin-top: 91px;
+}
+
+footer p {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.08px;
+  text-align: center;
+  color: var(--text-sc);
+  padding-block: 23px;
+}
