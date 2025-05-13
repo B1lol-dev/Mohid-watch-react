@@ -46,6 +46,10 @@ ul {
   display: flex;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   max-width: 1132px;
   margin: 0 auto;
