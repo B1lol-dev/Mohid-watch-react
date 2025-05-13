@@ -4,7 +4,15 @@ import contact_img from "../../assets/contact_img.png";
 // style
 import "./Contact.css";
 
+// hooks
+import { useState } from "react";
+
+// components
+import { toast, Toaster } from "react-hot-toast";
+
 export const Contact = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <section className="contact" id="contact">
       <div className="container">
@@ -14,13 +22,18 @@ export const Contact = () => {
             <p>Get free guide about smart watches daily.</p>
 
             <div className="contact_input">
-              <form action="subscribe">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  toast.success(`We sent an verification code to ${email}`);
+                }}
+              >
                 <input
                   required
                   type="email"
                   placeholder="Enter Email Address"
-                  name="input"
                   id="hero_input"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <button type="submit">Subscribe</button>
               </form>
