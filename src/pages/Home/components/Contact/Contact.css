@@ -1,0 +1,106 @@
+.contact {
+  margin-top: 135px;
+}
+
+.contact .container {
+  background-color: var(--bg-watch-card);
+  border-radius: 22px;
+}
+
+.contact_wrapper {
+  display: flex;
+  padding: 33px 110px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact_text h1 {
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+  text-align: left;
+  color: var(--bg-pr);
+}
+
+.contact_text p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: var(--text-pr);
+  padding-block: 12px;
+}
+
+.contact_input {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  & img {
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(../assets/Search_blue.png);
+  }
+
+  & input {
+    height: 60px;
+    width: 383px;
+    background-color: var(--bg-fr);
+    border-radius: 15px;
+    outline: none;
+    border: none;
+
+    color: var(--text-th);
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 140px;
+
+    &::placeholder {
+      color: #8b8e99;
+      font-size: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+
+  & button {
+    background-color: var(--bg-sc);
+    color: var(--text-sc);
+    font-size: 18px;
+    line-height: 22.59px;
+    text-align: center;
+    padding-block: 12px;
+    width: 131px;
+    position: absolute;
+    right: 8px;
+    border: none;
+    border-radius: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid var(--bg-sc);
+      background-color: var(--bg-fr);
+      color: var(--text-th);
+    }
+    &:active {
+      transform: scale(95%) translateY(-50%);
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .contact_wrapper {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+}
