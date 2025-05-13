@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 // components
-import { ProductCard } from "../cards/ProductCard/ProductCard";
+import { ProductCard } from "../../../../components/common/cards/ProductCard/ProductCard";
 import toast, { Toaster } from "react-hot-toast";
 
 // utils

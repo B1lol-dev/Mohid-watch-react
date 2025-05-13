@@ -2,10 +2,11 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
 
 // hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // utils
 import { v4 as uuidv4 } from "uuid";
+import { CartController } from "../../../../utils/cartController";
 
 // types
 interface IProductCardProps {
@@ -19,8 +20,30 @@ interface IProductCardProps {
 // style
 import "./ProductCard.css";
 
+// components
+import { Toaster, toast } from "react-hot-toast";
+
+const cartController = new CartController();
+
 export const ProductCard = ({ data }: { data: IProductCardProps }) => {
   const [like, setLike] = useState(false);
+
+  const handleLike = () => {
+    if (!like) {
+      cartController.addProduct(data.id);
+      setLike(true);
+      toast.success(`Product ${data.title} added to cart`);
+    } else {
+      cartController.removeProduct(data.id);
+      setLike(false);
+      toast.success(`Product ${data.title} removed from cart`);
+    }
+  };
+
+  useEffect(() => {
+    const isLiked = cartController.getProduct(data.id).length > 0;
+    setLike(isLiked);
+  }, [data.id]);
 
   return (
     <div className="card" title={data.title}>
@@ -30,10 +53,7 @@ export const ProductCard = ({ data }: { data: IProductCardProps }) => {
           <button className="card_shop">
             <ShoppingCart size={20} fill="white" />
           </button>
-          <button
-            className="card_heart"
-            onClick={() => setLike((prev) => !prev)}
-          >
+          <button className="card_heart" onClick={handleLike}>
             <Heart
               fill={like ? "red" : "white"}
               color={like ? "red" : "white"}
@@ -67,6 +87,7 @@ export const ProductCard = ({ data }: { data: IProductCardProps }) => {
           </p>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

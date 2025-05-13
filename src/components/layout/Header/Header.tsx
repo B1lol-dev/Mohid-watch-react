@@ -14,7 +14,15 @@ import logo_img from "../../../assets/images/Logo.png";
 // hooks
 import { useEffect } from "react";
 
-export const Header = () => {
+import type { CSSProperties } from "react";
+
+export const Header = ({
+  style,
+  isScrollEnabled = true,
+}: {
+  style?: CSSProperties;
+  isScrollEnabled?: boolean;
+}) => {
   const navLinks = ["home", "brands", "recent products", "contact", "about"];
 
   useEffect(() => {
@@ -24,14 +32,22 @@ export const Header = () => {
     ) as HTMLUListElement | null;
     const nav_menu = document.getElementById("nav_menu") as HTMLElement | null;
 
+    if (!isScrollEnabled) {
+      if (header) {
+        header.style.backgroundColor = "var(--bg-pr)";
+      }
+    }
+
     if (header && navbar_collection_open && nav_menu) {
       window.addEventListener("scroll", () => {
         const WinByY: number = window.scrollY;
 
-        if (WinByY > 0) {
-          header.style.backgroundColor = "var(--bg-pr)";
-        } else {
-          header.style.backgroundColor = "";
+        if (isScrollEnabled) {
+          if (WinByY > 0) {
+            header.style.backgroundColor = "var(--bg-pr)";
+          } else {
+            header.style.backgroundColor = "";
+          }
         }
       });
 
@@ -50,10 +66,10 @@ export const Header = () => {
         }
       });
     }
-  }, []);
+  }, [isScrollEnabled]);
 
   return (
-    <header className="header" id="header">
+    <header className="header" id="header" style={style}>
       <div className="container">
         <nav className="navbar">
           <div className="nav_logo">
@@ -69,7 +85,7 @@ export const Header = () => {
           <ul className="navbar_collection">
             {navLinks.map((link) => (
               <li key={uuidv4()}>
-                <Link to={link.split(" ").join("-")}>{link}</Link>
+                <Link to={"/" + link.split(" ").join("-")}>{link}</Link>
               </li>
             ))}
           </ul>
@@ -91,10 +107,11 @@ export const Header = () => {
               <img src={person_icon} alt="" />
             </li>
 
-            <li id="nav_shop">
-              <img src={cart_icon} alt="" />
-              <div id="sopping_cart" className="shopping_cart"></div>
-            </li>
+            <Link to="/cart">
+              <li id="nav_shop">
+                <img src={cart_icon} alt="" />
+              </li>
+            </Link>
           </ul>
         </nav>
       </div>
