@@ -1,3 +1,10 @@
+// style
+import "./Hero.css";
+
+// assets
+import hero_img from "../../assets/hero_img.png";
+import search_blue from "../../../../assets/icons/Search_blue.png";
+
 export const Hero = () => {
   return (
     <section className="hero" id="hero">
@@ -14,11 +21,7 @@ export const Hero = () => {
 
           <div className="hero_input">
             <form action="submit">
-              <img
-                src="./assets/Search_blue.png"
-                alt="Search_blue"
-                id="input_img"
-              />
+              <img src={search_blue} alt="Search_blue" id="input_img" />
               <input
                 required
                 type="text"
@@ -32,7 +35,7 @@ export const Hero = () => {
         </div>
 
         <div className="hero_img">
-          <img src="./assets/hero_img.png" alt="" />
+          <img src={hero_img} alt="" />
         </div>
       </div>
     </section>

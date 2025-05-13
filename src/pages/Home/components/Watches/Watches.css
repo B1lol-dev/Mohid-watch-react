@@ -1,0 +1,42 @@
+.watches_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  padding-block: 73px 135px;
+  gap: 20px;
+}
+
+.watch_card {
+  display: flex;
+  justify-content: center;
+  padding-top: 46px;
+  padding-inline: 41px 29px;
+  background-color: var(--bg-watch-card);
+  border-radius: 15px;
+}
+
+.watch_card_img {
+  transform: translateY(-15%);
+}
+
+.watch_card_text {
+  margin-left: 26px;
+
+  & h1 {
+    color: var(--text-fr);
+    font-weight: 700;
+    font-size: 36px;
+    font-family: Inter;
+  }
+  & p {
+    color: var(--text-pr);
+    max-width: 173px;
+    margin-top: 9px;
+    font-family: Inter;
+  }
+}
+
+@media (max-width: 950px) {
+  .watches_cards {
+    grid-template-columns: 1fr;
+  }
+}

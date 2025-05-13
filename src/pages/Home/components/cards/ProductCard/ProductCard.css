@@ -1,0 +1,96 @@
+.card {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 355px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.card_img {
+  padding: 27px 43px;
+  background-color: var(--bg-watch-card);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .card_img_items {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    right: 15px;
+    top: 10px;
+
+    & .card_shop,
+    .card_heart {
+      height: 38px;
+      width: 38px;
+      border: none;
+      border-radius: 50%;
+    }
+
+    & .card_shop {
+      background-color: var(--bg-sc);
+      font-size: 18px;
+      padding-top: 5px;
+      color: white;
+    }
+
+    & .card_heart {
+      background-color: var(--heart-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.card_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 11px;
+
+  & h1 {
+    display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+
+  & .stars {
+    padding-block: 8px;
+  }
+
+  & .card_price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+    & .not_price {
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24.1px;
+      text-align: right;
+      color: var(--text-pr);
+      text-decoration: line-through;
+    }
+
+    & .price {
+      font-family: Poppins;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 28.92px;
+      text-align: left;
+      color: black;
+    }
+  }
+}

@@ -16,6 +16,7 @@ header {
   font-style: normal;
   color: var(--text-sc);
   font-size: 30px;
+  cursor: pointer;
   display: none;
 }
 
@@ -23,6 +24,7 @@ header {
   gap: 27px;
   color: var(--text-pr);
   font-weight: 500;
+  text-transform: capitalize;
 
   & li a {
     transition: 0.2s ease-in-out;

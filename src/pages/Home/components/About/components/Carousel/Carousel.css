@@ -1,0 +1,81 @@
+.carousel_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 54px;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  gap: 5px;
+  transition: margin-left 0.5s;
+}
+
+.carousel_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 47px;
+  transition: 0.5s;
+}
+
+.stars {
+  font-size: 20px;
+}
+
+.carousel_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 524px;
+  height: 239px;
+  background-color: var(--bg-watch-card);
+  border-radius: 22px;
+  overflow: auto;
+  gap: 5px;
+
+  & .carousel_img {
+    max-width: 162.3px;
+    border-radius: inherit;
+
+    & img {
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+}
+
+.carousel_text h1 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.05px;
+  text-align: left;
+  color: var(--text-fr);
+}
+
+.carousel_text p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: var(--text-pr);
+  max-width: 255.97px;
+}
+
+.carousel_control {
+  display: flex;
+  gap: 11px;
+  padding-top: 42px;
+
+  & button {
+    height: 18px;
+    width: 18px;
+    background-color: var(--text-pr);
+    border: none;
+    border-radius: 50%;
+  }
+}
